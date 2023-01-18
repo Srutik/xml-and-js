@@ -14,7 +14,7 @@
     </data1>
 
     <data2>
-    <name2>
+        <name2>
             <firstname>Jay</firstname>
             <lastname>Bhatiya</lastname>
         </name2>
@@ -24,7 +24,7 @@
     </data2>
 
     <data3>
-    <name3>
+        <name3>
             <firstname>Smit</firstname>
             <lastname>Bhatiya</lastname>
         </name3>
@@ -34,7 +34,7 @@
     </data3>
 
     <data4>
-    <name4>
+        <name4>
             <firstname>Rahul</firstname>
             <lastname>Vanani</lastname>
         </name4>
@@ -44,7 +44,7 @@
     </data4>
 
     <data5>
-    <name5>
+        <name5>
             <firstname>Prabhat</firstname>
             <lastname>Virani</lastname>
         </name5>

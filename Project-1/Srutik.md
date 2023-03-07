@@ -1,0 +1,6 @@
+- In this XML project-1, Our topic is SoftwareCompany.
+- In my part I worked on JSON file to XML File.
+- Then after adding DTD to that XML file called softwareCompany.xml
+- Also I worked on XML to XSLT file that display the XML file into the table form.
+- I created XSD file of the softwareCompany.xml
+- And in the last I am working to load dynamic data from the XML file to the HTML file.

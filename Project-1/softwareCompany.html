@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        td, th {
+            width: 300px;
+        }
+    </style>
+  <body>
+    <div id= "Employee">
+    <center><h1>Employee Details</h1></center>
+    <table border="2"> 
+        <tr>
+            <th> ID</th>
+            <th>  First Name</th>
+            <th> Last Name </th>
+            <th> Email </th>
+            <th> Department </th>
+            <th> Occupation </th>
+          </tr>
+    </table>
+    </div>
+    <script>
+      const xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            displaylibrary(this.responseXML);
+        }
+      };
+      xhttp.open("GET", "softwareCompany.xml", true);
+      xhttp.send();
+
+      function stringToNode(html) {
+        const template = document.createElement(`template`);
+        html = html.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+      }
+
+      function displayCatalog(xmlDoc, id) {
+        console.log(id)
+        const listElement = document.getElementById(id);
+
+        const bookNodes = xmlDoc.getElementsByTagName(`data`);
+        
+        for (let index = 0; index < bookNodes.length; index++) {
+          const bookNode = bookNodes[index];
+          // <td>${bookNode.getElementsByTagName(`id`)[0].childNodes[0].nodeValue}</td>
+          const listItem = stringToNode(`
+          <tr>
+            <td>${id}</td>
+            <td>${bookNode.getElementsByTagName(`firstName`)[0].childNodes[0].nodeValue}</td>
+            <td>${bookNode.getElementsByTagName(`LastName`)[0].childNodes[0].nodeValue}</td>
+            <td>${bookNode.getElementsByTagName(`email`)[0].childNodes[0].nodeValue} </td>
+            <td>${bookNode.getElementsByTagName(`department`)[0].childNodes[0].nodeValue} </td>
+            <td>${bookNode.getElementsByTagName(`occupation`)[0].childNodes[0].nodeValue} </td>
+        </tr>`);
+          listElement.appendChild(listItem);
+        }
+      }
+
+      function displaylibrary(xmlDoc) {
+        const listElement = document.getElementById(`Employee`);
+
+        const lbNodes = xmlDoc.getElementsByTagName(`data`);
+        
+        for (let index = 0; index < lbNodes.length; index++) {
+          const lbNode = lbNodes[index];
+          const addressNode = lbNode.getElementsByTagName(`employees`)[0];
+          const listItem = stringToNode(`
+          <div>
+          <table border="1">
+          <tr>
+            <td>${id}</td>
+            <td>${lbNode.getElementsByTagName(`name`)[0].childNodes[0].nodeValue}</td>
+            <td>${lbNode.getElementsByTagName(`domain`)[0].childNodes[0].nodeValue}</td>
+            <td>
+              <p>
+                ${addressNode.getElementsByTagName(`firstName`)[0].childNodes[0].nodeValue} &nbsp
+                ${addressNode.getElementsByTagName(`LastName`)[0].childNodes[0].nodeValue} &nbsp
+                ${addressNode.getElementsByTagName(`email`)[0].childNodes[0].nodeValue} &nbsp
+                ${addressNode.getElementsByTagName(`department`)[0].childNodes[0].nodeValue} &nbsp
+                ${addressNode.getElementsByTagName(`occupation`)[0].childNodes[0].nodeValue} &nbsp
+              </p>
+            </td>
+            </table>
+        </tr>
+        </table>
+        </div>`);
+        }
+      }
+    </script>
+  </body>
+</html>

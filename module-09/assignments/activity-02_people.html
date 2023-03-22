@@ -42,10 +42,31 @@
         }
       }
 
-      fetch("people.xml")
-        .then((response) => response.text())
-        .then((str) => new DOMParser().parseFromString(str, "text/xml"))
-        .then(displayData);
+    /* This is the code for using Fetch API. */
+    //   fetch("people.xml")
+    //     .then((response) => response.text())
+    //     .then((str) => new DOMParser().parseFromString(str, "text/xml"))
+    //     .then(displayData);
+
+
+    /* This is the code for using Async Await. */
+    //   const loadData = async () => {
+    //     const response = await fetch("people.xml");
+    //     const str = await response.text();
+    //     const xmlData = new DOMParser().parseFromString(str, "text/xml");
+    //     displayData(xmlData);
+    //   };
+    //   loadData();
+
+    /* This is the code for using Fetch & Function*/
+    const loadData = async () => {
+        const fetchData = await fetch("./people.xml")
+        .then((data) => data.text())
+        .then((strData) => 
+        new DOMParser().parseFromString(strData, "text/xml"));
+        displayData(fetchData);
+      };
+      loadData();
     </script>
   </body>
 </html>

@@ -1,9 +1,27 @@
+body {
+  background-color: black;
+}
+
 .genre-card {
   max-width: 100%;
   overflow: hidden;
   display: flex;
-  background-color: #4daf64;
+  margin: auto;
+  background-color: #525151;
   color: white;
+}
+
+.genre-card > img {
+  margin: auto;
+  border: 5px dotted black;
+  border-radius: 10px;
+  transition: width 2s, height 2s, background-color 2s, rotate 2s;
+}
+
+.genre-card > img:hover {
+  transform: scale(1.0.5);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  rotate: 360deg;
 }
 
 .genre-card:not(:last-child) {
@@ -17,6 +35,11 @@
   overflow: hidden;
 }
 
+.genre-card > div > h2 {
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
 .genre-card > div > a {
   color: white;
   font-weight: bold;
@@ -27,6 +50,19 @@ ol {
   margin: 0;
   padding: 0;
   display: flex;
+  flex-direction: row;
   overflow: auto;
   max-width: 100%;
+}
+
+li {
+  transition: all .2s ease-in-out;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+li:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }

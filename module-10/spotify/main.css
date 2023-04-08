@@ -11,14 +11,15 @@ body {
   color: white;
 }
 
-.genre-card > img {
+.genre-card > .main-image {
+  width: 100%;
   margin: auto;
   border: 5px dotted black;
   border-radius: 10px;
   transition: width 2s, height 2s, background-color 2s, rotate 2s;
 }
 
-.genre-card > img:hover {
+.genre-card > .main-image:hover {
   transform: scale(1.0.5);
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
   rotate: 360deg;
@@ -60,9 +61,24 @@ li {
   border: 2px solid black;
   border-radius: 10px;
   margin: 10px;
+  height: auto;
 }
 
 li:hover {
   transform: scale(1.1);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+ol #tracks{
+  background-color: rgb(212, 204, 204);
+  color: black;
+  border: 2px solid whitesmoke;
+  border-radius: 5px;
+  width: auto;
+  height: auto;
+}
+
+ol #tracks a {
+  text-decoration: none;
+  color: black;
 }

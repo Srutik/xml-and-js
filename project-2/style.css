@@ -1,150 +1,160 @@
 body {
-    margin: 0px;
-    padding: 0px;
-    background-color: rgb(66, 63, 65);
-    color: whitesmoke;
-  }
+  background-color: #f2f2f2;
+  color: #444444;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  position: relative;
+}
 
-  .submitBTN{
-    height: 30px;
-    width: 120px;
-    border-radius: 3px;
-    border: 2px solid black;
-    background-color: aliceblue;
-    color: black;
-  }
+header {
+  background-color: #0080ff;
+  padding: 10px;
+}
 
-  .buttonBTN{
-    height: 30px;
-    width: 120px;
-    border-radius: 3px;
-    border: 2px solid black;
-    background-color: aliceblue;
-    color: black;
-  }
+header h1 {
+  color: #ffffff;
+  font-size: 36px;
+  margin: 0;
+}
 
-  label {
-    font-weight: bold;
-  }
-  .card:nth-child(even) {
-    font-size: 10px;
-    max-width: 100%;
-    overflow: hidden;
-    display: flex;
-    background-color: #eaf03a;
-    color:#2b67c2;
-    font-family: "Playfair Display", serif;
-    font-style: normal;
-    font-weight: bold;
-}   
-  .card:nth-child(odd) {
-    max-width: 100%;
-    overflow: hidden;
-    display: flex;
-    background-color: #2b67c2;
-    color: #eaf03a;
-    font-family: "Playfair Display", serif;
-    font-style: normal;
-    font-weight: bold;
-}  
-  .card:not(:last-child) {
-    margin-bottom: 10px;
-  }
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+nav li a:hover {
+  color: #c0e4fa;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
   
-  .card > div {
-    padding: 10px 20px;
-    display: flex;
+}
+
+label {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+input[type="text"],
+input[type="checkbox"] {
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  color: #444444;
+  font-size: 16px;
+  
+}
+
+input[type="checkbox"] + label {
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #0080ff;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;  
+}
+
+button:hover {
+  background-color: #005299;
+}
+
+#collection {
+  margin: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  margin-top: 20px;
+}
+
+#collection img{
+  max-width: 200px;
+  max-height: 200px;
+  margin: 10px;
+}
+
+#collection h2 {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #444444;
+  color: #cccccc;
+  padding: 2px;
+}
+
+
+footer p {
+  margin: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  form {
     flex-direction: column;
-    overflow: hidden;
-  }
-  
-  .card > div > a {
-    color: rgb(195, 17, 46);
-    font-weight: bold;
-  }
-  
-  h2 {
-    text-align: center;
-    letter-spacing: 2px;
-    font-size: 30px;
-  }
-  
-  .card .list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    overflow: auto;
-    max-width: 100%;
-  }
-  
-  .card .list .main-list {
-    margin: top 10px,bottom 0px,left 0px,right 0px;
-  }
-  
-  .card .list .main-list:hover {
-    transform: scale(0.9);
-    direction: unset;
-  }
-  
-  .card .list img {
-    display: flex;
-    min-width: 40px;
-    min-width: 40px;
-    border-radius: 10px;
-  }
-  
-  .main-list > .play-name {
-    margin: 10px 0;
-    text-align: center;
   }
 
-  .main-img {
-    text-align: center;
-    max-width: 30%;
-    max-width: 30%;
-    margin: auto;
-    display: block;
-    border-radius: 50px;
-  }
-  
-  .main-list > .play-name > a {
-    font-size: 14px;
-    text-decoration: none;
-    color: rgb(41, 60, 48);
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    letter-spacing: 0.8px;
-  }
-  
-  .all-name {
-    padding: 5px;
-    color: brown;
-    letter-spacing: 2px;
+  input[type="text"],
+  input[type="checkbox"] {
+    width: 100%;
   }
 
-.card:nth-child(even) .artist-name {
-    color: #2b67c2;
+  button {
+    width: 100%;
   }
-  
-  .card:nth-child(odd) .artist-name {
-    color: #eaf03a;
-  }
-  
-  .track-name {
-    font-size: 13px;
-    color: black
-  }
-  
-  .list > li {
-    padding: 5px;
-    font-size: 14px;
-  }
-  
-  ol::-webkit-scrollbar {
-    display: none;
-  }
-  
+}
+
+#logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 320px;
+}
+
+#logo h1 {
+  font-size: 100px;
+}
+

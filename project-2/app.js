@@ -15,16 +15,15 @@ const fetchImg = async (datak,isOut) => {
       imgElem.setAttribute('id',datak.name);
       //img tag complete
   
-      let caros = document.getElementById("yash");
+      let caros = document.getElementById("collection");
       caros.appendChild(imgElem);//adding img element
-  
   };
   
   function checkOut(check){
     fetch(`./collection.json`)
     .then((data) => data.json())
     .then((data) => {
-      document.getElementById("yash").replaceChildren();
+      document.getElementById("collection").replaceChildren();
       var flag = false;
       for(let k in data){
           if(check == data[k].name){
@@ -42,7 +41,7 @@ const fetchImg = async (datak,isOut) => {
       fetch(`./collection.json`)
     .then((data) => data.json())
     .then((data) => {
-      document.getElementById("yash").replaceChildren();
+      document.getElementById("collection").replaceChildren();
       for( let k in data){
           if(input == data[k].name){
               fetchImg(data[k],false);
@@ -80,7 +79,7 @@ const fetchImg = async (datak,isOut) => {
       
     };
   function reloadpage(){
-        document.getElementById("yash").replaceChildren();
+        document.getElementById("collection").replaceChildren();
         pageloader();
     }
   
